@@ -20,9 +20,34 @@ namespace _20200629_uzduotis
         {
             string Name { get; set; }
             string Surname { get; set; }
-            int Evil { get; set; }
+            int Evil { get; }
             void Introduce();
         }
+		
+		class Supermenas : IHero
+		{
+			string Name { get; set; }
+            string Surname { get; set; }
+            string Superpowers { get; set; }
+			
+			
+			public void Introduce()
+			{
+				Console.WriteLine("As nesioju apatinius ant kelniu");
+			}
+		}
+		
+		class Jokeris :IVillain
+		{
+			string Name { get; set; }
+            string Surname { get; set; }
+            int Evil { get; }
+			
+			public void Introduce()
+			{
+				Console.WriteLine("Lets put some smile");
+			}
+		}
 
         class Hero: IHero
         {
@@ -32,7 +57,7 @@ namespace _20200629_uzduotis
 
             public Hero(string name, string surname, string superpowers)
             {
-                Name = name;
+                
                 Surname = surname;
                 Superpowers = superpowers;
             }
@@ -47,7 +72,7 @@ namespace _20200629_uzduotis
         {
             public string Name { get; set; }
             public string Surname { get; set; }
-            public int Evil { get; set; }
+        
 
             public Villain(string name, string surname, int evil)
             {
